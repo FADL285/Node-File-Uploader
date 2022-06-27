@@ -41,3 +41,10 @@
   margin: 0.5rem 0;
 }
 
+#image-preview {
+  display: none;
+  max-height: 8rem;
+  max-width: 100%;
+  object-fit: cover;
+  margin: 0.5rem auto;
+}
