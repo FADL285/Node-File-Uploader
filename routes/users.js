@@ -1,5 +1,6 @@
 const express = require('express');
 const multer  = require('multer')
+const db = require('../data/database')
 
 const router = express.Router();
 
@@ -23,13 +24,13 @@ router.get('/new-user', function(req, res) {
   res.render('new-user');
 });
 
-router.post('/profiles', upload.single('avatar'), function(req, res) {
+router.post('/profiles', upload.single('avatar'), async function(req, res) {
   const userData = req.body;
   const uploadedImageFile = req.file;
-  console.log("DATA:");
-  console.log(userData);
-  console.log("FILE:");
-  console.log(uploadedImageFile);
+  await db.getDb().collection('users').insertOne({
+    name: userData.username,
+    avatar: uploadedImageFile.path
+  })
   res.redirect('/')
 })
 
