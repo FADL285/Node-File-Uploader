@@ -1,7 +1,11 @@
-# NodeJS File Upload App
+# Node File Uploader App
 
-Save Files on server NodeJS app
+Simple File Uploader App with Express & MongoDB
 
+## Prerequisites
+
+1. [Node.js](https://nodejs.org/)
+2. [MongoDB](https://www.mongodb.com/docs/manual/installation/)
 
 ## Project Setup
 
@@ -9,8 +13,16 @@ Save Files on server NodeJS app
 npm install
 ```
 
-### Run the App
+## Run the App
+
+### For Production
 
 ```sh
 npm start
+```
+
+### For Development
+
+```sh
+npm dev
 ```
