@@ -10,12 +10,12 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
 app.use(userRoutes);
 
 db.connectToDatabase().then(function () {
-    app.listen(3000);
+  app.listen(3000, () => console.log('listening on http://localhost:3000'));
 });
